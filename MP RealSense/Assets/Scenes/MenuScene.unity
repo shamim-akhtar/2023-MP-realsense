@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 672928478}
   - component: {fileID: 672928477}
   m_Layer: 5
-  m_Name: Title (Legacy)
+  m_Name: Title Text(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 1899353082}
   - component: {fileID: 1899353081}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
