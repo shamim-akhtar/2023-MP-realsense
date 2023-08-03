@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
@@ -9,6 +10,9 @@ public class SpawnObjects : MonoBehaviour
     public float numberTargets = 0;
     public Vector3 center;
     public Vector3 size;
+
+    public Text uiText;
+    public float score = 0;
 
     // Start is called before the first frame update
     void Start()
