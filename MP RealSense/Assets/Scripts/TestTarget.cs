@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TestTarget : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class TestTarget : MonoBehaviour
                 // If the click hits the GameObject, destroy it
                 Destroy(gameObject);
                 spawnObjects.numberTargets -= 1f;
+
+                spawnObjects.score += 10;
+                spawnObjects.uiText.text = "Score: " + spawnObjects.score;
             }
         }
     }
