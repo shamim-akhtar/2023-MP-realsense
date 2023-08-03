@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseAndResumeGame : MonoBehaviour
 {
@@ -12,5 +13,10 @@ public class PauseAndResumeGame : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }
