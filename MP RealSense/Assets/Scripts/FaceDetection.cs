@@ -11,6 +11,7 @@ public class FaceDetection : MonoBehaviour
     private CascadeClassifier cascade;
     private Mat grayMat;
     private MatOfRect faces;
+    CameraCapture cameraCapture;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,6 @@ public class FaceDetection : MonoBehaviour
     void Update()
     {
         //Convert camera texture to grayscale Mat
-        Mat cameraTextureMat = new Mat();
+        Mat cameraFeedMat = new Mat();
     }
 }
