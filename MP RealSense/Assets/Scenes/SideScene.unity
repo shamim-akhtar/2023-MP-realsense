@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 468465574}
   - component: {fileID: 468465573}
   - component: {fileID: 468465572}
+  - component: {fileID: 468465577}
   m_Layer: 0
   m_Name: Camera Feed
   m_TagString: Untagged
@@ -249,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8104752e1db57d44bdac6ef51b26f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 468465574}
 --- !u!64 &468465573
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1c73046df3a0cc41b613a851991e3ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -337,6 +337,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468465577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468465571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48d998605ba753499333cf933c1e8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTexture: {fileID: 2100000, guid: e1c73046df3a0cc41b613a851991e3ff, type: 2}
 --- !u!1 &1264295031
 GameObject:
   m_ObjectHideFlags: 0

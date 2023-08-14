@@ -6,7 +6,6 @@ using Intel.RealSense;
 public class CameraCapture : MonoBehaviour
 {
     private WebCamTexture webCamTexture;
-    private Texture cameraTexture;
 
     // Start is called before the first frame update
     void Start()
