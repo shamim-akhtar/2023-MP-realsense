@@ -8,7 +8,7 @@ public class CameraCapture : MonoBehaviour
     private WebCamTexture webCamTexture;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         WebCamDevice[] devices = WebCamTexture.devices;
 

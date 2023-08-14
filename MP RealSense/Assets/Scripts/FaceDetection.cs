@@ -30,9 +30,16 @@ public class FaceDetection : MonoBehaviour
     void Update()
     {
         //Convert camera texture to Mat
-        cameraTextureMat = new Mat(cameraTexture.mainTexture.height, cameraTexture.mainTexture.width, CvType.CV_8UC4);
-        Utils.textureToTexture2D(cameraTexture.mainTexture, cameraTexture2D);
-        Utils.texture2DToMat(cameraTexture2D, cameraTextureMat);
+        if (cameraTexture2D != null)
+        {
+            Utils.textureToTexture2D(cameraTexture.mainTexture, cameraTexture2D);
+            cameraTextureMat = new Mat(cameraTexture2D.height, cameraTexture2D.width, CvType.CV_8UC4);
+            Utils.texture2DToMat(cameraTexture2D, cameraTextureMat);
+        }
+        else
+        {
+            Debug.Log("cameraTexture is null");
+        }
 
         //Convert camera texture to grayscale Mat
         Imgproc.cvtColor(cameraTextureMat, grayMat, Imgproc.COLOR_RGBA2GRAY);
