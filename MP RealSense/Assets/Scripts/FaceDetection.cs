@@ -13,12 +13,13 @@ public class FaceDetection : MonoBehaviour
     private Mat grayMat;
     private MatOfRect faces;
     private Mat cameraTextureMat;
-    private Texture2D cameraTexture2D;
-    public Material cameraTexture;
+    CameraCapture cameraCapture;
 
     // Start is called before the first frame update
     void Start()
     {
+        cameraCapture = GetComponent<CameraCapture>();
+
         cascade = new CascadeClassifier();
         cascade.load(Utils.getFilePath("haarcascade_frontalface_alt.xml"));
 
@@ -29,28 +30,29 @@ public class FaceDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Convert camera texture to Mat
-        if (cameraTexture2D != null)
+        if (cameraCapture.webCamTexture.isPlaying)
         {
-            Utils.textureToTexture2D(cameraTexture.mainTexture, cameraTexture2D);
-            cameraTextureMat = new Mat(cameraTexture2D.height, cameraTexture2D.width, CvType.CV_8UC4);
-            Utils.texture2DToMat(cameraTexture2D, cameraTextureMat);
+            //Convert camera texture to Mat
+            Utils.webCamTextureToMat(cameraCapture.webCamTexture, grayMat);
+
+            // Initialize cameraTextureMat with the same size as grayMat
+            if (cameraTextureMat == null || cameraTextureMat.width() != grayMat.width() || cameraTextureMat.height() != grayMat.height())
+            {
+                cameraTextureMat = new Mat(grayMat.rows(), grayMat.cols(), CvType.CV_8UC4); // Change CvType as needed
+            }
+
+            //Perform face detection
+            cascade.detectMultiScale(grayMat, faces, 1.1, 2, 0, new Size(30, 30));
+
+            //Draw rectangles around detected faces
+            foreach (OpenCVForUnity.CoreModule.Rect rect in faces.toArray())
+            {
+                Imgproc.rectangle(cameraTextureMat, rect.tl(), rect.br(), new Scalar(255, 0, 0));
+            }
         }
         else
         {
             Debug.Log("cameraTexture is null");
-        }
-
-        //Convert camera texture to grayscale Mat
-        Imgproc.cvtColor(cameraTextureMat, grayMat, Imgproc.COLOR_RGBA2GRAY);
-
-        //Perform face detection
-        cascade.detectMultiScale(grayMat, faces, 1.1, 2, 0, new Size(30, 30));
-
-        //Draw rectangles around detected faces
-        foreach (OpenCVForUnity.CoreModule.Rect rect in faces.toArray())
-        {
-            Imgproc.rectangle(cameraTextureMat, rect.tl(), rect.br(), new Scalar(255, 0, 0));
         }
     }
 }

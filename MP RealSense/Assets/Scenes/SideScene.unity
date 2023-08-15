@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8104752e1db57d44bdac6ef51b26f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  webCamTexture: {fileID: 0}
 --- !u!64 &468465573
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -349,7 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48d998605ba753499333cf933c1e8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTexture: {fileID: 2100000, guid: e1c73046df3a0cc41b613a851991e3ff, type: 2}
 --- !u!1 &1264295031
 GameObject:
   m_ObjectHideFlags: 0

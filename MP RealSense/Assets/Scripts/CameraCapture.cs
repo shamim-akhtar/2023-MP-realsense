@@ -5,7 +5,8 @@ using Intel.RealSense;
 
 public class CameraCapture : MonoBehaviour
 {
-    private WebCamTexture webCamTexture;
+    [HideInInspector]
+    public WebCamTexture webCamTexture;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,11 +32,5 @@ public class CameraCapture : MonoBehaviour
         {
             Debug.Log("No camera devices found.");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
