@@ -7,7 +7,7 @@ public class MenuInputs : MonoBehaviour
 {
     public void StartButtonPressed()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("HandTrackGame");
     }
 
 }
