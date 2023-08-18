@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectMovement : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float knockbackForce = 100f;
 
     private Rigidbody rb;
 
@@ -20,5 +21,11 @@ public class ObjectMovement : MonoBehaviour
 
         // Move the object using global coordinates
         transform.position += desiredMovement;
+    }
+
+    public void ApplyKnockback(Vector3 force)
+    {
+        // Apply an external knockback force to the object
+        rb.AddForce(force * knockbackForce, ForceMode.Impulse);
     }
 }
