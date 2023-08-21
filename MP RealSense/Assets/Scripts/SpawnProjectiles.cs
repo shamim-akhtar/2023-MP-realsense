@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnCubes : MonoBehaviour
+public class SpawnProjectiles : MonoBehaviour
 {
-    public GameObject cubes;
+    public GameObject projectiles;
     public Transform[] spawnPoints;
     float spawnInterval;
 
@@ -21,7 +21,7 @@ public class SpawnCubes : MonoBehaviour
             spawnInterval = Random.Range(1.0f, 5.0f);
             yield return new WaitForSeconds(spawnInterval);
 
-            Instantiate(cubes, spawnPoints[Random.Range(0, 2)]);
+            Instantiate(projectiles, spawnPoints[Random.Range(0, spawnPoints.Length)]);
         }
     }
 }
