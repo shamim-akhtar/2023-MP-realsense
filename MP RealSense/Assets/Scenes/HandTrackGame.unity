@@ -8309,7 +8309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Health: 15'
+  m_Text: 
 --- !u!222 &2117043229
 CanvasRenderer:
   m_ObjectHideFlags: 0
