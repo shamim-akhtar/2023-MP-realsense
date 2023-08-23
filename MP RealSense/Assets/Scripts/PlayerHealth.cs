@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    int health = 15;
-    Text healthText;
+    [HideInInspector]
+    public int health;
+    public Text healthText;
 
     public void LoseHealth()
     {
-        health -= 1;
-        healthText.text = "Score: " + health;
+        healthText.text = "Health: " + health--;
     }
 }
