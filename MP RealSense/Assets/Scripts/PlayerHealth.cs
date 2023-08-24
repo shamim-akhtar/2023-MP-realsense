@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int health = 14;
+    private int health = 15;
     public Text healthText;
 
     private void Start()
     {
-        healthText.text = "Health: 15";
+        healthText.text = "Health: " + health;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Projectiles") == true)
         {
-            healthText.text = "Health: " + health--;
+            health--;
+            healthText.text = "Health: " + health;
         }
     }
 }
