@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int health = 15;
+    private int health = 5;
     public Text healthText;
 
     private void Start()
