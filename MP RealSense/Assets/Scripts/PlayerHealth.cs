@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int health = 5;
+    [HideInInspector]
+    public int health = 5;
+
     public Text healthText;
 
     private void Start()
