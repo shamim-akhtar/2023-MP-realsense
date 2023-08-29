@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    PlayerHealth playerHealth;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerHealth playerHealth;
+    public GameObject deathMenu;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +13,7 @@ public class PlayerDeath : MonoBehaviour
         if(playerHealth.health == 0)
         {
             Time.timeScale = 0;
+            deathMenu.SetActive(true);
         }
     }
 }
