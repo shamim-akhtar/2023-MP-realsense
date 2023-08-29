@@ -8,6 +8,7 @@ public class MenuInputs : MonoBehaviour
     public void StartButtonPressed()
     {
         SceneManager.LoadScene("HandTrackGame");
+        Time.timeScale = 1;
     }
 
 }

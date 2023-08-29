@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    private int score = 0;
+    [HideInInspector]
+    public int score = 0;
+
     public Text scoreText;
+    public Text endScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = "Score: " + score;
+    }
+
+    private void Update()
+    {
+        endScoreText.text = "Score: " + score;
     }
 
     private void OnCollisionEnter(Collision collision)
