@@ -8,7 +8,6 @@ public class QuitGame : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("MenuScene");
-        SceneManager.UnloadSceneAsync("HandTrackScene");
         
     }
 }
