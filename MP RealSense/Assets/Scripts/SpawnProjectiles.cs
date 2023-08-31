@@ -6,6 +6,7 @@ public class SpawnProjectiles : MonoBehaviour
 {
     public GameObject projectiles;
     public Transform[] spawnPoints;
+    public AudioClip clip;
     float spawnInterval;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class SpawnProjectiles : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
 
             Instantiate(projectiles, spawnPoints[Random.Range(0, spawnPoints.Length)]);
+            AudioSource.PlayClipAtPoint(clip, transform.position, 1.5f);
         }
     }
 }

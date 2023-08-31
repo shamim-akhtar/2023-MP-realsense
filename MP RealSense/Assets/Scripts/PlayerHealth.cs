@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public int health = 5;
 
     public Text healthText;
+    public AudioClip damageClip;
+
 
     private void Start()
     {
@@ -20,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
         {
             health--;
             healthText.text = "Health: " + health;
+
+            AudioSource.PlayClipAtPoint(damageClip, transform.position, 1f);
         }
     }
 }

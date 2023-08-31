@@ -4914,6 +4914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   healthText: {fileID: 2117043228}
+  damageClip: {fileID: 8300000, guid: 4b53d713fe6b8dd4a87dbf1afc8da6c1, type: 3}
 --- !u!1 &931543194
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,6 +6275,7 @@ MonoBehaviour:
   - {fileID: 1915542681}
   - {fileID: 35063381}
   - {fileID: 231089665}
+  clip: {fileID: 8300000, guid: 57e8263cd45890c43b3624eef61ef3ee, type: 3}
 --- !u!4 &1348813661
 Transform:
   m_ObjectHideFlags: 0
