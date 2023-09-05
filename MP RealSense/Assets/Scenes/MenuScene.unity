@@ -784,7 +784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Title Placeholder
+  m_Text: Bionic Defender
 --- !u!222 &672928478
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1830,7 +1830,8 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Plug the Intel RealSense camera into the \nUSB 3.0 port\n\nPress Start
-    to start playing\n\nTo play, throw balls at the ones in-game"
+    to start playing\n\nTo play, put your hand in front of the\ncamera and then move
+    it around to \nblock the lasers"
 --- !u!222 &2138642306
 CanvasRenderer:
   m_ObjectHideFlags: 0
