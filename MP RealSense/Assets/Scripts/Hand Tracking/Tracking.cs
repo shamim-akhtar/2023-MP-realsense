@@ -7,9 +7,21 @@ public class Tracking : MonoBehaviour
     // Start is called before the first frame update
     public UDPReceive udpReceive;
     public GameObject[] handPoints;
+    private static GameObject instance;
     void Start()
     {
-
+        if (instance == null)
+        {
+            // If no instance exists, this is the first one; don't destroy it.
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // An instance already exists, destroy this one.
+            Destroy(gameObject);
+        }
+    
     }
 
     // Update is called once per frame
