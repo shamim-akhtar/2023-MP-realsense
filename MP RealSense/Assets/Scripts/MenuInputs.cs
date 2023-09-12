@@ -12,7 +12,7 @@ public class MenuInputs : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 
         // Load the target scene
-        SceneManager.LoadScene("HandTrackGame");
+        SceneManager.LoadScene("HandTrackGame 1");
 
         Time.timeScale = 1;
     }

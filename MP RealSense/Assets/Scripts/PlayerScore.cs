@@ -7,27 +7,18 @@ public class PlayerScore : MonoBehaviour
 {
     [HideInInspector]
     public int score = 0;
+    public Light lightComponent;
+    public Color normalColor;
+    public Color blinkColor;
+    public float blinkDuration = 0.5f;
 
-    public Text scoreText;
-    public Text endScoreText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        scoreText.text = "Score: " + score;
-    }
-
-    private void Update()
-    {
-        endScoreText.text = "Score: " + score;
-    }
+    private bool isBlinking = false;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Projectiles") == true)
         {
             score = score + 10;
-            scoreText.text = "Score: " + score;
         }
     }
 }
