@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5613253347346918386}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Projectiles
+  m_TagString: Proj1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  speedMulti: 1
 --- !u!54 &-2571193933160031446
 Rigidbody:
   m_ObjectHideFlags: 0

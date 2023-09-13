@@ -18,9 +18,16 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Projectiles") == true)
+        if (collision.gameObject.CompareTag("Proj1") == true)
         {
             health--;
+            healthText.text = "Health: " + health;
+
+            AudioSource.PlayClipAtPoint(damageClip, transform.position, 1f);
+        }
+        else if (collision.gameObject.CompareTag("Proj2") == true)
+        {
+            health-= 2;
             healthText.text = "Health: " + health;
 
             AudioSource.PlayClipAtPoint(damageClip, transform.position, 1f);

@@ -10,18 +10,30 @@ public class ShieldScript : MonoBehaviour
     public Light lightComponent;
     public Color normalColor;
     public Color blinkColor;
-    public float blinkDuration = 0.5f;
+    public float blinkDuration = 0.1f;
+
+    public AudioSource audioSource;
 
     private bool isBlinking = false;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Projectiles") == true)
+        if (collision.gameObject.CompareTag("Proj1") == true)
         {
             score = score + 10;
             if (!isBlinking)
             {
                 StartCoroutine(Blink());
+                audioSource.Play();
+            }
+        }
+        else if(collision.gameObject.CompareTag("Proj2") == true)
+        {
+            score = score + 20;
+            if (!isBlinking)
+            {
+                StartCoroutine(Blink());
+                audioSource.Play();
             }
         }
         else
