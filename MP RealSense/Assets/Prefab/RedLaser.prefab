@@ -228,9 +228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  speedMulti: 1
   newSpeed: 0
-  scalingInterval: 5
+  proj1: {fileID: 6510400093019040746}
+  proj2: {fileID: 463137621783271614, guid: d4811135da9e85d42be3e8a813fcb8fb, type: 3}
+  proj3: {fileID: 6510400093019040746, guid: eb5c32aa06196a040b1c0e236ad0c4da, type: 3}
+  proj4: {fileID: 942484167409325905, guid: c3da6fa9f80c22b439dac6876e61b0cf, type: 3}
 --- !u!54 &-2746673621163967327
 Rigidbody:
   m_ObjectHideFlags: 0

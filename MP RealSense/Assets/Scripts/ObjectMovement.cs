@@ -5,41 +5,33 @@ using UnityEngine;
 public class ObjectMovement : MonoBehaviour
 {
     public float speed = 0f;
-    public float speedMulti = 1.0f;
     public float newSpeed;
-    public float scalingInterval = 30.0f;
+    public Collider proj1;
+    public Collider proj2;
+    public Collider proj3;
+    public Collider proj4;
 
-    private WaitForSeconds waitInterval;
+    SpawnProjectiles spawnProj;
 
     private Rigidbody rb;
 
     private void Start()
     {
-        speedMulti = 1.0f;
-        StartCoroutine(IntervalAction());
-        waitInterval = new WaitForSeconds(scalingInterval);
+        GameObject spawner = GameObject.FindWithTag("Spawner");
+        spawnProj = spawner.GetComponent<SpawnProjectiles>();
         rb = GetComponent<Rigidbody>();
+        Physics.IgnoreCollision(proj1, proj2);
+        Physics.IgnoreCollision(proj1, proj3);
+        Physics.IgnoreCollision(proj1, proj4);
     }
 
     private void Update()
     {
+        newSpeed = speed * spawnProj.speedMulti;
         // Calculate the desired movement in global coordinates
-        Vector3 desiredMovement = Vector3.back * speed * Time.deltaTime;
+        Vector3 desiredMovement = Vector3.back * newSpeed * Time.deltaTime;
 
         // Move the object using global coordinates
         transform.position += desiredMovement;
-        Debug.Log(speedMulti + " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    }
-
-    public IEnumerator IntervalAction()
-    {
-        while (true)
-        {
-            Time.timeScale += 0.1f;
-            newSpeed = speed * speedMulti;
-            Debug.Log(newSpeed + " BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-            // Wait for the specified interval before running the code again
-            yield return waitInterval;
-        }
     }
 }
