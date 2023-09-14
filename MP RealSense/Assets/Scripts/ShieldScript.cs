@@ -10,37 +10,45 @@ public class ShieldScript : MonoBehaviour
     public Light lightComponent;
     public Color normalColor;
     public Color blinkColor;
-    public float blinkDuration = 0.5f;
+    public float blinkDuration = 0.01f;
 
-    private bool isBlinking = false;
+    public AudioSource audioSource;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Projectiles") == true)
+        if (collision.gameObject.CompareTag("Proj1") == true)
         {
             score = score + 10;
-            if (!isBlinking)
-            {
+            StopCoroutine(Blink());
+                audioSource.Play();
                 StartCoroutine(Blink());
-            }
+        }
+        else if(collision.gameObject.CompareTag("Proj2") == true)
+        {
+            score = score + 20;
+                audioSource.Play();
+                StopCoroutine(Blink());
+                StartCoroutine(Blink());
+        }
+        else if (collision.gameObject.CompareTag("Proj3") == true)
+        {
+            score = score + 50;
+            audioSource.Play();
+            StopCoroutine(Blink());
+            StartCoroutine(Blink());
         }
         else
         {
-            isBlinking = false;
             lightComponent.color = normalColor;
         }
     }
 
     IEnumerator Blink()
     {
-        isBlinking = true;
-
         lightComponent.color = blinkColor;
         yield return new WaitForSeconds(blinkDuration);
 
         lightComponent.color = normalColor;
         yield return new WaitForSeconds(blinkDuration);
-
-        isBlinking = false;
     }
 }

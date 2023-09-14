@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public Text scoreText;
     public Text endScoreText;
+    public Text deathScoreText;
 
     ShieldScript shieldScript;
 
@@ -21,5 +22,6 @@ public class GameManager : MonoBehaviour
     {
         scoreText.text = "Score: " + shieldScript.score;
         endScoreText.text = scoreText.text;
+        deathScoreText.text = scoreText.text;
     }
 }

@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Target
   - Destroyer
-  - Projectiles
+  - Proj1
+  - Proj2
+  - Proj3
+  - Spawner
+  - Proj4
   layers:
   - Default
   - TransparentFX
