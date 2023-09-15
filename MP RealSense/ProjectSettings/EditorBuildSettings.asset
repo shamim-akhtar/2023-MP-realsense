@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HandTrackGame 1.unity
     guid: 16ce9721431f3b34aa19b3f2a5219802
+  - enabled: 1
+    path: Assets/Scenes/HandTrackGame 2.unity
+    guid: ff5478c09f384844d81ab34cddbcdb06
   m_configObjects: {}
