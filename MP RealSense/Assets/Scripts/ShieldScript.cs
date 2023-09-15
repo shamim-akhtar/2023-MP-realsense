@@ -37,6 +37,13 @@ public class ShieldScript : MonoBehaviour
             StopCoroutine(Blink());
             StartCoroutine(Blink());
         }
+        else if (collision.gameObject.CompareTag("Proj4") == true)
+        {
+            score = score + 30;
+            audioSource.Play();
+            StopCoroutine(Blink());
+            StartCoroutine(Blink());
+        }
         else
         {
             lightComponent.color = normalColor;
